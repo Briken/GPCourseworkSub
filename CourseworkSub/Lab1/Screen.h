@@ -11,10 +11,9 @@ class Screen
 public:
 	Screen();
 	~Screen();
-	void InitializeScreen();
+	void InitializeScreen(); // initialises the screen and sets necessary variables to defauls
 	void SwapBuffer();
 	void ClearScreen(float r, float g, float b, float a);
-	void EnableLighting();
 	float GetWidth();
 	float GetHeight();
 
@@ -24,9 +23,9 @@ private:
 	
 	
 
-	SDL_GLContext m_GameContext; //global variable to hold the context
-	SDL_Window* m_GameWindow; //holds pointer to out window
-	float m_ScreenWidth;
-	float m_ScreenHeight;
+	SDL_GLContext m_GameContext;	//global variable to hold the context
+	SDL_Window* m_GameWindow;		//holds pointer to the window
+	float m_ScreenWidth;			//holds the screen width
+	float m_ScreenHeight;			//holds the screen height
 };
 

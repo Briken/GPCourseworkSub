@@ -29,30 +29,21 @@ private:
 	void ManageInput();
 	void MainGameLoop();
 	void RenderScene();
+	void SwitchControlMode();
+	void QuitGame();
+
 
 	Screen m_GameScreen;
 	Light m_Light;
 	GameState m_CurrentState;
+	Model model;
 	Model model1;
 	Model model2;
 	Camera m_GameCamera;
-
+	bool controllingModel;
 	float counter;
 
-	char cCurrPath[FILENAME_MAX];
-
-	std::string getDir()
-	{
-		char buffer[MAX_PATH];
-		GetModuleFileName(NULL, buffer, MAX_PATH);
-		std::string::size_type pos = std::string(buffer).find_last_of("\\/");
-		/*DWORD i = GetCurrentDirectory(0, NULL);
-		std::string dir = std::to_string(i);*/
-		std::string dir = std::string (buffer).substr(0, pos);
-
-
-		return dir;
-	}
+	
 	
 	
 };

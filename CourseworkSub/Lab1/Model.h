@@ -16,7 +16,6 @@ public:
 
 	glm::vec3* GetPosition() { return &m_Position; }
 	glm::vec2* GetTextureCoord() { return &m_TextureCoord; }
-	glm::vec3* GetNormal() { return &m_Normal; }
 
 private:
 	glm::vec3 m_Position;

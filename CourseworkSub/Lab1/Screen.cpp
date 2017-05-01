@@ -27,21 +27,6 @@ void Screen::ReturnError(std::string errorString)
 	SDL_Quit();
 }
 
-void Screen::EnableLighting()
-{
-	glEnable(GL_LIGHTING); // enable lighting calculations
-	glEnable(GL_LIGHT0);
-
-	GLfloat globalAmbient[] = { 0.1f, 0.0f, 0.0f, 1.0f };
-	GLfloat diffuseLight[] = { 0.8f, 0.8f, 0.8, 1.0f };
-	GLfloat specular[] = { 1.0,1.0,1.0,1.0 };
-	GLfloat position[] = { -1.5f, 1.5f, -4.0f, 1.0f, };
-	
-	glLightfv(GL_LIGHT0, GL_AMBIENT, globalAmbient);
-	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuseLight);
-	glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-	glLightfv(GL_LIGHT0, GL_POSITION, position);
-}
 
 void Screen::SwapBuffer()
 {
@@ -88,5 +73,5 @@ void Screen::InitializeScreen()
 	glEnable(GL_CULL_FACE); //dont draw faces that are not pointing at the camera
 	
 
-	glClearColor(0.0f, 1.0f, 1.0f, 1.0f);
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f);
 }

@@ -10,7 +10,7 @@ void Model::InitializeMesh(Vertex* vertices, unsigned int numVertices, unsigned 
 	{
 		model.m_Positions.push_back(*vertices[i].GetPosition());
 		model.m_TextureCoords.push_back(*vertices[i].GetTextureCoord());
-		//model.m_Normals.push_back(*vertices[i].GetNormal());
+
 	}
 
 	for (unsigned int i = 0; i < numIndices; i++)
@@ -18,23 +18,6 @@ void Model::InitializeMesh(Vertex* vertices, unsigned int numVertices, unsigned 
 
 	InitializeModel(model);
 
-	//glGenBuffers(NUM_BUFFERS, m_VertexArrayBuffers); //generate our buffers based of our array of data/buffers - GLuint m_VertexArrayBuffers[NUM_BUFFERS];
-	//glBindBuffer(GL_ARRAY_BUFFER, m_VertexArrayBuffers[POSITION_VERTEXBUFFER]); //tell opengl what type of data the buffer is (GL_ARRAY_BUFFER), and pass the data
-	//glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(m_Positions[0]), &m_Positions[0], GL_STATIC_DRAW); //move the data to the GPU - type of data, size of data, starting address (pointer) of data, where do we store the data on the GPU (determined by type)
-
-	//glEnableVertexAttribArray(0);
-	//glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 0, 0);
-
-	//glBindBuffer(GL_ARRAY_BUFFER, m_VertexArrayBuffers[TEXCOORD_VB]); //tell opengl what type of data the buffer is (GL_ARRAY_BUFFER), and pass the data
-	//glBufferData(GL_ARRAY_BUFFER, numVertices * sizeof(textCoords[0]), &textCoords[0], GL_STATIC_DRAW); //move the data to the GPU - type of data, size of data, starting address (pointer) of data, where do we store the data on the GPU
-	//
-	//glEnableVertexAttribArray(1);
-	//glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 0, 0);
-
-	//glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, m_VertexArrayBuffers[INDEX_VB]); //tell opengl what type of data the buffer is (GL_ARRAY_BUFFER), and pass the data
-	//glBufferData(GL_ELEMENT_ARRAY_BUFFER, numIndices * sizeof(indices[0]), &indices[0], GL_STATIC_DRAW); //move the data to the GPU - type of data, size of data, starting address (pointer) of data, where do we store the data on the GPU
-
-	//glBindVertexArray(0); // unbind our VAO
 }
 
 void Model::InitializeModel(const IndexedModel& model)
